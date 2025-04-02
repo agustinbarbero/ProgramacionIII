@@ -1,0 +1,230 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.25px;
+    margin-bottom: 0;
+}
+
+body{
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header{
+    color: white;
+    height: 100px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction:initial;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    transition: all 0.3s ease; /*transicion suave para los cambios*/
+}
+
+header.scrolled{
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.9);
+    border: none;
+}
+
+header h1{
+    font-size: 24px;
+    transition: font-size 0.3 ease;
+}
+
+header.scrolled h1{
+    font-size: 18px;
+}
+
+header nav ul{
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+header nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: font-size 0.3s ease;
+}
+
+header.scrolled nav ul li a{
+    font-size: 14px;
+}
+
+.portada_principal{
+    border: 1px solid red;
+    background-image: url('../images/foto_portada_principal.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 700px;
+}
+
+.portada_principal_boton{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    height: 6%;
+    background-color: #f4f4f4;
+    position: absolute; /*Permite mover el boton dentro del contenedor*/
+    top: 70%; /*Ajussta la posicion vertical(50% desde la parte superior)*/
+    left: 70%;/* Ajusta la posición horizontal (50% desde la izquierda) */
+}
+
+.portada_principal_boton button{
+    margin: 0;
+    padding: 0;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 16px;
+    width: 100%;
+    height: 100%;
+}
+
+.informacion{
+    border: 1px solid blue;
+    display: flex;
+    padding: 50px 150px;
+    height: 1500px;
+    background-color: #f4f4f4;
+    overflow: hidden; /*oculta todo lo que se sale*/
+    color: grey;
+}
+
+.descripcion{
+    border: 1px solid red;
+    height: 450px;
+    width: 800px;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 25px;
+}
+
+
+#titulo_descripcion_primero {
+    color: rgb(171, 171, 45);
+    font-size: 30px;
+}
+
+#titulo_descripcion_segundo {
+    color: black;
+    font-size: 70px;
+    line-height: 1;
+}
+
+.fotos_body img{
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 650px;
+}
+
+#foto_1{
+    position: relative;
+    left: 25%;
+}
+
+#foto_2{
+    position: relative;
+    top: -5%;
+    right: 83%;
+}
+
+.portafolio_trabajo{
+    display: flex;
+    border: 1px solid green;
+    margin: 0;
+    background-image: url('../images/foto_portada.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: auto;
+    padding: 80px;
+    align-items: center;
+    justify-content:left;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.portafolio_trabajo p{
+    border: 1px solid purple;
+    width: 1000px;
+    height: 50px;
+    font-size: 20px;
+    background-color: rgb(119, 119, 119);
+}
+
+.portafolio_trabajo button{
+    padding: 0;
+    margin: 0;
+    height: 50px;
+    width: 200px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    top: 25%;
+}
+
+.descripcion_precios {
+    border: 1px solid orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: auto;
+    padding: 30px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    line-height: 2;
+}
+
+.descripcion_precios_informacion {
+    border: 1px solid red;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+}
+
+.descripcion_precios_informacion h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.descripcion_precios_listado {
+    background-color: black; /* Ahora coincide con el fondo de la sección */
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.precio-item {
+    padding: 15px;
+    font-size: 18px;
+    border-bottom: 1px dotted white;
+}
+
+.precio-item:last-child {
+    border-bottom: none;
+}
