@@ -1,4 +1,43 @@
-*{
+@font-face {
+    font-family: 'MontserratLight';
+    src: url('../fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MontserratBlack';
+    src: url('../fonts/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetpye');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSansItalic';
+    src: url(../fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth\,wght.ttf) format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        scale: 0.4;
+    }
+
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+}
+
+.block {
+    animation: appear 1s ease forwards;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,64 +47,74 @@
     margin-bottom: 0;
 }
 
-body{
+body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }
 
-header{
+header {
     color: white;
     height: 100px;
-    border: 1px solid red;
     display: flex;
-    justify-content: space-evenly;
     align-items: center;
-    flex-direction:initial;
+    flex-direction: initial;
     background-color: black;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
-    transition: all 0.3s ease; /*transicion suave para los cambios*/
+    z-index: 1000;
+    /* Asegura que el header esté por encima de otros elementos */
+    transition: all 0.3s ease;
+    /*transicion suave para los cambios*/
+    padding: 0 20px;
 }
 
-header.scrolled{
+header.scrolled {
     height: 60px;
     background-color: rgba(0, 0, 0, 0.9);
     border: none;
 }
 
-header h1{
+.titulo {
+    text-align: center;
+    position: relative;
+    top: 3%;
+    left: 28%;
+}
+
+header h1 {
     font-size: 24px;
     transition: font-size 0.3 ease;
 }
 
-header.scrolled h1{
+header.scrolled h1 {
     font-size: 18px;
 }
 
-header nav ul{
+
+header nav ul {
     display: flex;
     list-style: none;
     gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
-header nav ul li a{
+header nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
     transition: font-size 0.3s ease;
 }
 
-header.scrolled nav ul li a{
+header.scrolled nav ul li a {
     font-size: 14px;
 }
 
-.portada_principal{
-    border: 1px solid red;
+.portada_principal {
     background-image: url('../images/foto_portada_principal.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -74,19 +123,23 @@ header.scrolled nav ul li a{
     height: 700px;
 }
 
-.portada_principal_boton{
+.portada_principal_boton {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 15%;
     height: 6%;
     background-color: #f4f4f4;
-    position: absolute; /*Permite mover el boton dentro del contenedor*/
-    top: 70%; /*Ajussta la posicion vertical(50% desde la parte superior)*/
-    left: 70%;/* Ajusta la posición horizontal (50% desde la izquierda) */
+    position: absolute;
+    /*Permite mover el boton dentro del contenedor*/
+    top: 70%;
+    /*Ajussta la posicion vertical(50% desde la parte superior)*/
+    left: 70%;
+    /* Ajusta la posición horizontal (50% desde la izquierda) */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.portada_principal_boton button{
+.portada_principal_boton button {
     margin: 0;
     padding: 0;
     cursor: pointer;
@@ -100,58 +153,62 @@ header.scrolled nav ul li a{
     height: 100%;
 }
 
-.informacion{
-    border: 1px solid blue;
+.informacion {
     display: flex;
     padding: 50px 150px;
     height: 1500px;
     background-color: #f4f4f4;
-    overflow: hidden; /*oculta todo lo que se sale*/
-    color: grey;
+    overflow: hidden;
+    /*oculta todo lo que se sale*/
+    color: rgb(77, 77, 77);
 }
 
-.descripcion{
-    border: 1px solid red;
+.descripcion {
     height: 450px;
     width: 800px;
     font-size: 20px;
     margin-top: 50px;
     margin-bottom: 50px;
     margin-right: 25px;
+    font-family: 'OpenSans', sans-serif;
+    color: #333;
 }
 
 
 #titulo_descripcion_primero {
     color: rgb(171, 171, 45);
     font-size: 30px;
+    font-family: 'MontserratLight', sans-serif;
 }
 
 #titulo_descripcion_segundo {
     color: black;
     font-size: 70px;
     line-height: 1;
+    font-family: 'MontserratBlack', sans-serif;
+    font-weight: 900;
 }
 
-.fotos_body img{
+.fotos_body img {
     object-fit: cover;
     max-width: 100%;
     max-height: 650px;
 }
 
-#foto_1{
+#foto_1 {
     position: relative;
     left: 25%;
 }
 
-#foto_2{
+#foto_2 {
     position: relative;
     top: -5%;
     right: 83%;
 }
 
-.portafolio_trabajo{
+
+.portafolio_trabajo {
     display: flex;
-    border: 1px solid green;
     margin: 0;
     background-image: url('../images/foto_portada.jpg');
     background-size: cover;
@@ -160,21 +217,24 @@ header.scrolled nav ul li a{
     width: auto;
     padding: 80px;
     align-items: center;
-    justify-content:left;
+    justify-content: left;
     flex-direction: column;
     color: white;
     text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Sombra negra con transparencia */
 }
 
-.portafolio_trabajo p{
-    border: 1px solid purple;
+.portafolio_trabajo p {
     width: 1000px;
     height: 50px;
-    font-size: 20px;
-    background-color: rgb(119, 119, 119);
+    font-size: 25px;
+    font-family: 'OpenSansItalic', sans-serif;
+    font-weight: 400;
+    font-style: italic;
 }
 
-.portafolio_trabajo button{
+.portafolio_trabajo button {
     padding: 0;
     margin: 0;
     height: 50px;
@@ -187,7 +247,6 @@ header.scrolled nav ul li a{
 }
 
 .descripcion_precios {
-    border: 1px solid orange;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -198,13 +257,17 @@ header.scrolled nav ul li a{
     margin: auto;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     line-height: 2;
+    font-family: 'OpenSansItalic', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+
 }
 
 .descripcion_precios_informacion {
-    border: 1px solid red;
     text-align: center;
     padding: 15px;
     width: 100%;
+    background-color: rgb(21, 21, 21);
 }
 
 .descripcion_precios_informacion h1 {
@@ -213,7 +276,8 @@ header.scrolled nav ul li a{
 }
 
 .descripcion_precios_listado {
-    background-color: black; /* Ahora coincide con el fondo de la sección */
+    background-color: black;
+    /* Ahora coincide con el fondo de la sección */
     color: white;
     width: 100%;
     text-align: center;
@@ -227,4 +291,99 @@ header.scrolled nav ul li a{
 
 .precio-item:last-child {
     border-bottom: none;
+}
+
+.testimonio-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+
+}
+
+.testimonios {
+    background-image: url(../images/foto_fondo_testimonio.jpg);
+    background-color: grey;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+}
+
+.testimonios h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    color: rgb(171, 171, 45);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Sombra negra con transparencia */
+}
+
+.testimonio h2 {
+    color: white;
+    font-size: 23px;
+    font-weight: 100;
+    font-family: 'OpenSansItalic' sans-serif;
+    font-style: italic;
+}
+
+.testimonio p {
+    color: rgb(171, 171, 45);
+    font-size: 16px;
+    font-family: 'OpenSansItalic', sans-serif;
+    font-style: italic;
+}
+
+.testimonio {
+    display: none;
+    /*oculta todos*/
+    text-align: center;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.testimonio.active {
+    display: block;
+    /*muestra solo el activo*/
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
+
+.nav-btn:hover {
+    color: #666;
+}
+
+.mapa_contenedor {
+    padding: 15px;
+    background-color: black;
+    color: white;
+}
+
+.mapa_contenedor h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.map {
+    filter: grayscale(100) invert(92%) contrast(93%);
+    display: block;
+    border-radius: 10px;
 }
