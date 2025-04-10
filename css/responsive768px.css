@@ -1,39 +1,25 @@
-@media (max-width: 768px){
-
-    .portada_principal{
-        height: 750px;
+@media screen and (max-width: 768px) {
+    .informacion {
+        flex-direction: column;
+        padding: 30px 20px;
     }
 
-    .titulo{
-        left: 8.8%;
-    }
-    .informacion{
-        padding: 60px;
-        height: 1250px;
-    }
-    .fotos_body{
-        width: 100%;
-        margin: 0px;
-        padding: 0px;
+    #titulo_descripcion_segundo {
+        font-size: 2rem;
+        text-align: center;
     }
 
-
-    #foto_1{
-        top: 10%;
-        left: 10%;
-        height: 40%;
-        width: 100%;
+    .descripcion {
+        text-align: center;
     }
 
-    #foto_2{
-        top: 15%;
-        left: 0%;
-        width: 500px;
-        height: 500px;
+    .fotos_body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
-    .portada_principal_boton{
-        height: 8%;
-        width: 20%;
+    .fotos_body img {
+        max-width: 45%;
     }
 }

@@ -1,4 +1,4 @@
-header {
+.header {
     color: white;
     height: 100px;
     display: flex;
@@ -6,40 +6,41 @@ header {
     flex-direction: initial;
     background-color: black;
     position: fixed;
-    top: 0;
-    left: 0;
+    justify-content: space-between;
     width: 100%;
     z-index: 1000;
     /* Asegura que el header esté por encima de otros elementos */
     transition: all 0.3s ease;
     /*transicion suave para los cambios*/
-    padding: 0 20px;
+    padding: 20px 40px;
 }
 
-header.scrolled {
+.header.scrolled {
     height: 60px;
     background-color: rgba(0, 0, 0, 0.9);
     border: none;
 }
 
 .titulo {
-    text-align: center;
-    position: relative;
-    top: 3%;
-    left: 28%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 2rem;
+    font-family: 'MontserratBlack', sans-serif
 }
 
-header h1 {
+.header h1 {
     font-size: 24px;
     transition: font-size 0.3 ease;
 }
 
-header.scrolled h1 {
+.header.scrolled h1 {
     font-size: 18px;
 }
 
 
-header nav ul {
+.header nav ul {
     display: flex;
     list-style: none;
     gap: 20px;
@@ -47,13 +48,13 @@ header nav ul {
     padding: 0;
 }
 
-header nav ul li a {
+.header nav ul li a {
     color: white;
     text-decoration: none;
     font-size: 16px;
     transition: font-size 0.3s ease;
 }
 
-header.scrolled nav ul li a {
+.header.scrolled nav ul li a {
     font-size: 14px;
 }

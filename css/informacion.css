@@ -1,52 +1,50 @@
-
 .informacion {
     display: flex;
-    padding: 50px 150px;
-    height: 1500px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 50px 5%;
     background-color: #f4f4f4;
-    overflow: hidden;
-    /*oculta todo lo que se sale*/
     color: rgb(77, 77, 77);
+    justify-content: center;
+    align-items: center;
 }
 
 .descripcion {
-    height: 450px;
-    width: 800px;
-    font-size: 20px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    margin-right: 25px;
+    flex: 1 1 400px;
+    font-size: 2rem;
     font-family: 'OpenSans', sans-serif;
     color: #333;
+    min-width: 300px;
+    text-align: justify;
 }
 
 #titulo_descripcion_primero {
     color: rgb(171, 171, 45);
-    font-size: 30px;
+    font-size: 2.2rem;
     font-family: 'MontserratLight', sans-serif;
 }
 
 #titulo_descripcion_segundo {
     color: black;
-    font-size: 70px;
-    line-height: 1;
+    font-size: 4rem;
+    line-height: 1.2;
     font-family: 'MontserratBlack', sans-serif;
     font-weight: 900;
 }
 
+.fotos_body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    flex: 1 1 400px;
+}
+
 .fotos_body img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
     object-fit: cover;
-    width: 500px;
-    height: 650px;
-}
-
-#foto_1 {
-    position: relative;
-    left: 25%;
-}
-
-#foto_2 {
-    position: relative;
-    top: -5%;
-    right: 83%;
+    border-radius: 10px;
 }
