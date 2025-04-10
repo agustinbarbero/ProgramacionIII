@@ -1,0 +1,81 @@
+
+.testimonio-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 800px;
+    height: 400px;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+
+}
+
+.testimonios {
+    background-image: url(../images/foto_fondo_testimonio.jpg);
+    background-color: grey;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
+}
+
+.testimonios h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    color: rgb(171, 171, 45);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    /* Sombra negra con transparencia */
+}
+
+.testimonio h2 {
+    color: white;
+    font-size: 23px;
+    font-weight: 100;
+    font-family: 'OpenSansItalic' sans-serif;
+    font-style: italic;
+}
+
+.testimonio p {
+    color: rgb(171, 171, 45);
+    font-size: 16px;
+    font-family: 'OpenSansItalic', sans-serif;
+    font-style: italic;
+}
+
+.testimonio {
+    display: none;
+    /*oculta todos*/
+    text-align: center;
+    max-width: 600px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.testimonio.active {
+    display: block;
+    /*muestra solo el activo*/
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.filtro::after{
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+}
+
+.nav-btn:hover {
+    color: #666;
+}

@@ -1,0 +1,46 @@
+.descripcion_precios {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: white;
+    width: auto;
+    padding: 30px;
+    margin: auto;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    line-height: 2;
+    font-family: 'OpenSansItalic', sans-serif;
+    font-weight: 400;
+    font-style: italic;
+
+}
+
+.descripcion_precios_informacion {
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    background-color: rgb(21, 21, 21);
+}
+
+.descripcion_precios_informacion h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.descripcion_precios_listado {
+    background-color: black;
+    /* Ahora coincide con el fondo de la sección */
+    color: white;
+    width: 100%;
+    text-align: center;
+}
+
+.precio-item {
+    padding: 15px;
+    font-size: 18px;
+    border-bottom: 1px dotted white;
+}
+
+.precio-item:last-child {
+    border-bottom: none;
+}

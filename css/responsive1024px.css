@@ -1,0 +1,12 @@
+@media (max-width:1024px){
+    
+    #foto_1{
+        top: 5%;
+    }
+
+    #foto_2{
+        top: 15%;
+        right: 100%;
+    }
+
+}

@@ -1,0 +1,17 @@
+.mapa_contenedor {
+    padding: 15px;
+    background-color: black;
+    color: white;
+}
+
+.mapa_contenedor h1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.map {
+    filter: grayscale(100) invert(92%) contrast(93%);
+    display: block;
+    border-radius: 10px;
+}

@@ -1,0 +1,52 @@
+
+.informacion {
+    display: flex;
+    padding: 50px 150px;
+    height: 1500px;
+    background-color: #f4f4f4;
+    overflow: hidden;
+    /*oculta todo lo que se sale*/
+    color: rgb(77, 77, 77);
+}
+
+.descripcion {
+    height: 450px;
+    width: 800px;
+    font-size: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    margin-right: 25px;
+    font-family: 'OpenSans', sans-serif;
+    color: #333;
+}
+
+#titulo_descripcion_primero {
+    color: rgb(171, 171, 45);
+    font-size: 30px;
+    font-family: 'MontserratLight', sans-serif;
+}
+
+#titulo_descripcion_segundo {
+    color: black;
+    font-size: 70px;
+    line-height: 1;
+    font-family: 'MontserratBlack', sans-serif;
+    font-weight: 900;
+}
+
+.fotos_body img {
+    object-fit: cover;
+    width: 500px;
+    height: 650px;
+}
+
+#foto_1 {
+    position: relative;
+    left: 25%;
+}
+
+#foto_2 {
+    position: relative;
+    top: -5%;
+    right: 83%;
+}

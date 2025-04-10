@@ -1,0 +1,39 @@
+@media (max-width: 768px){
+
+    .portada_principal{
+        height: 750px;
+    }
+
+    .titulo{
+        left: 8.8%;
+    }
+    .informacion{
+        padding: 60px;
+        height: 1250px;
+    }
+    .fotos_body{
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+    }
+
+
+    #foto_1{
+        top: 10%;
+        left: 10%;
+        height: 40%;
+        width: 100%;
+    }
+
+    #foto_2{
+        top: 15%;
+        left: 0%;
+        width: 500px;
+        height: 500px;
+    }
+
+    .portada_principal_boton{
+        height: 8%;
+        width: 20%;
+    }
+}

@@ -1,0 +1,90 @@
+@media (max-width: 360px){
+    body{
+        width: 100%;
+    }
+
+    header{
+        display: flex;
+        flex-direction: column;
+        /*align-items: center;*/
+        height: auto;
+        padding: 10px;
+    }
+
+    header h1{
+        align-items: center;
+        justify-content: center;
+    }
+
+    .portada_principal_boton{
+        display: flex;
+        width: 40%;
+        left: 30%;
+        top: 80%;
+    }
+
+    .informacion{
+        padding: 10px;
+        text-align: justify;
+        flex-direction: column;
+    }
+
+    .descripcion{
+        width: 100%;
+    }
+
+    #titulo_descripcion_segundo {
+        padding: 5px;
+    }
+
+    .fotos_body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .fotos_body img{
+        width: 100%;
+        height: auto;
+    }
+
+    #foto_1{
+        position: static;
+    }
+
+    #foto_2{
+        position: static;
+    }
+
+    .portafolio_trabajo button{
+        top: 75%;
+    }
+
+    .testimonios-container{
+        padding: 10px;
+    }
+    
+    .testimonios-container{
+        font-size: 14px;
+    }
+
+    #testimonio_3 h2{
+        font-size: 20px;
+    }
+
+    #testimonio_2 h2{
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .mapa_contenedor h1{
+        position: relative;
+        left: 23%;
+    }
+
+
+
+
+}
