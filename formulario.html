@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulario.css">
+    <title>Formulario</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="POST">
+            <!-- Campos del formulario -->
+            <label for="Nombre">Nombre:</label>
+            <input type="text" id="Nombre" name="Nombre"  placeholder="Ingrese el Nombre" required><br><br>
+            <label for="Apellido">Apellido:</label>
+            <input type="text" id="Apellido" name="Apellido" placeholder="Ingrese el Nombre" required><br><br>
+            <label for="Email">Email:</label>
+            <input type="email" id="Email" name="Email" placeholder="Ingrese el Email" required><br><br>
+            <label for="Telefono">Teléfono:</label>
+            <input type="tel" id="Telefono" name="Telefono" placeholder="Ingrese el Telefono" required><br><br>
+            <label for="Fecha">Fecha:</label>
+            <input type="date" id="Fecha" name="Fecha" placeholder="Ingrese la Fecha" required><br><br>
+            <label for="Hora">Hora:</label>
+            <input type="time" id="Hora" name="Hora"required><br><br>
+            <label for="Servicio">Servicio:</label>
+            <select id="Servicio" name="Servicio" required>
+                <option value="" disabled selected>Selecciona un servicio</option>
+                <option value="Corte de pelo">Corte de pelo: $5.000</option>
+                <option value="Corte de pelo + barba">Corte de pelo + barba $7000</option>
+                <option value="Teñirse">Teñirse $15.000</option>
+            </select><br><br>
+            <label for="Comentarios">Comentarios:</label><br>
+            <textarea id="Comentarios" name="Comentarios" placeholder="Ingrese un comentario"></textarea><br><br>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>
