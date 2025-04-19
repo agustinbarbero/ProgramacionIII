@@ -52,3 +52,43 @@
     margin-top: 16px;
     color: #fff;
   }
+
+  .card:hover{
+    transform: scale(1.05);
+  }
+
+  /* Titulo y descripción */
+  .box-section{
+    font-family: sans-serif;
+    line-height: 1.6;
+    padding: 40px 20px;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .titulo-articulo{
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #444;
+  }
+
+  .texto-articulo{
+    padding-left: 20px;
+    text-align: center;
+    font-weight: normal;
+    font-size: 1.2em;
+    color: black;
+  }
+
+  /* Responsive para pantallas más chicas */
+@media (max-width: 992px) {
+  .card {
+      flex: 1 1 calc(50% - 20px); /* 2 por fila */
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+      flex: 1 1 100%; /* 1 por fila */
+  }
+}
