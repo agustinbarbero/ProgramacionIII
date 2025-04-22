@@ -25,7 +25,8 @@
     font-style: italic;
 }
 
-.portafolio_trabajo button {
+
+.portafolio_trabajo a{
     padding: 0;
     margin: 0;
     height: 50px;
@@ -34,10 +35,11 @@
     border: none;
     cursor: pointer;
     position: relative;
-    top: 25%;
+    top: 25%;   
+    color: black;
 }
 
-.portafolio_trabajo button:hover{
+.portafolio_trabajo a:hover{
     transform: scale(1.1);
     transition: transform 0.3s;
     text-decoration: underline;
