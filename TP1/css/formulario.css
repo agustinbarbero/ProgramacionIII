@@ -12,7 +12,7 @@
 }
 
 body{
-    background-image: url(../TpProyecto/fotos/imagenFondoForm.jpg);
+    background-image: url(../fotos/imagenFondoForm.jpg); 
     background-size: cover; /* Asegura que la imagen cubra todo el fondo */
     background-position: center; /* Centra la imagen de fondo */
     align-items: center;

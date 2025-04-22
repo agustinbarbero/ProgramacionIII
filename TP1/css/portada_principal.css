@@ -8,6 +8,7 @@
 }
 
 .portada_principal_boton {
+    text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,7 +18,7 @@
     position: absolute;
     /*Permite mover el boton dentro del contenedor*/
     top: 70%;
-    /*Ajussta la posicion vertical(50% desde la parte superior)*/
+    /*Ajusta la posicion vertical(50% desde la parte superior)*/
     left: 70%;
     /* Ajusta la posición horizontal (50% desde la izquierda) */
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
