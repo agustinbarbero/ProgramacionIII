@@ -46,6 +46,7 @@ function checkAge(input_edad){
 
 
 btn_enviar.addEventListener("click", (event) => {
+    event.preventDefault();
     let isValid = true
     if(!NotEmpty(nombre)) isValid = false;
     if(!NotEmpty(email)) isValid = false;
