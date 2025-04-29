@@ -8,6 +8,20 @@
   body{
     background-color: #f0f0f0;
   }
+
+  #btn_atras{
+    width: 50px;
+    height: 30px;
+    background-color: black;
+    color: white;
+    font-size: 15px;
+  }
+
+  #btn_atras:hover{
+    width: 60px;
+    height: 40px;
+    font-size: 20px;
+  }
   .cards-section{
     display: flex;
     justify-content: center;

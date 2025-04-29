@@ -45,11 +45,16 @@ function checkAge(input_edad){
 };
 
 
-btn_enviar.addEventListener("click", () => {
-    NotEmpty(nombre);
-    NotEmpty(email);
-    NotEmpty(edad);
-    checkEmail(email);
-    checkAge(edad);
+btn_enviar.addEventListener("click", (event) => {
+    let isValid = true
+    if(!NotEmpty(nombre)) isValid = false;
+    if(!NotEmpty(email)) isValid = false;
+    if(!NotEmpty(edad)) isValid = false;
+    if(!checkEmail(email)) isValid = false;
+    if(!checkAge(edad)) isValid = false;
+
+    if (!isValid){
+        event.preventDefault();
+    }
 });
 

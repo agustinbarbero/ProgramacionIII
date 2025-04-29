@@ -35,6 +35,18 @@ body{
     border-radius: 10px;
 }
 
+a{
+    background-color: #ffcc00; /* Color de fondo amarillo */
+    color: black; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 5px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar por encima */
+    font-weight: bold; /* Texto en negrita */
+    transition: background-color 0.3s; /* Efecto suave al cambiar el color de fondo */
+    text-decoration: none;
+}
+
 button{
     background-color: #ffcc00; /* Color de fondo amarillo */
     color: black; /* Color del texto */
