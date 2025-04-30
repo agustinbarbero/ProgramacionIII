@@ -3,44 +3,53 @@ const email = document.getElementById("email_input");
 const edad = document.getElementById("edad_input");
 const btn_enviar = document.getElementById("btn_enviar");
 
+const msgError = document.getElementsByClassName("oculto");
+
 function NotEmpty(input){
     let input_texto = input.value.trim();
-    const errorId = `${input.id}_error`;
+    const errorElement = document.getElementById(`${input.id}_error`);
     if(input_texto === ""){
-        alert(`Debe rellenar el campo: ${input.id}`);
-        let parrafoError = document.createElement("p");
-        parrafoError.textContent = `Debe rellenar el campo: ${input.id}`;
-        parrafoError.style.color = "red";
-        input.parentNode.appendChild(parrafoError);
+        errorElement.textContent ="Esta campo es obligatorio";
+        errorElement.style.color = "red";
+        errorElement.classList.remove("oculto");
+        errorElement.style.display = "block";
         return false;
     }
+    errorElement.textContent = "";
+    errorElement.classList.add("oculto");
+    errorElement.style.display = "none";
     return true;
 };
 
 function checkEmail(input_email){
-    let email_string = input_email.value;
-    console.log("entrando");
-    if(!email_string.includes('@') || !email_string.includes('.com')){
-        alert("Ingrese un email valido");
-        let parrafoError = document.createElement("p");
-        parrafoError.textContent = `Debe ingresar un email valido`;
-        parrafoError.style.color = "red";
-        input_email.parentNode.appendChild(parrafoError);
+    let email = input_email.value.trim();
+    const errorElement = document.getElementById(`${input_email.id}_error`);
+    if(!email.includes('@') || !email.includes('.com')){
+        errorElement.textContent = "El email no es valido";
+        errorElement.style.color = "red";
+        errorElement.classList.remove("oculto");
+        errorElement.style.display = "block";
         return false;
     }
+    errorElement.textContent = "";
+    errorElement.classList.add("oculto");
+    errorElement.style.display = "none";
     return true;
 };
 
 function checkAge(input_edad){
-    const edad = parseInt(input_edad);
-    if(isNaN(edad)){
-        alert("Ingrese una edad validad");
-        let parrafoError = document.createElement("p");
-        parrafoError.textContent = "Debe ingresar una edad valida";
-        parrafoError.style.color = "red";
-        input_edad.parentNode.appendChild(parrafoError);
+    const edadString = input_edad.value.trim();
+    const edad = parseInt(edadString);
+    const errorElement = document.getElementById(`${input_edad.id}_error`);
+    if(isNaN(edad) || edad <= 0){
+        errorElement.textContent = "La edad debe ser un numero entero";
+        errorElement.classList.remove("oculto");
+        errorElement.style.display = "block";
         return false;
     }
+    errorElement.textContent = "";
+    errorElement.classList.add("oculto");
+    errorElement.style.display = "none";
     return true;
 };
 
@@ -54,8 +63,8 @@ btn_enviar.addEventListener("click", (event) => {
     if(!checkEmail(email)) isValid = false;
     if(!checkAge(edad)) isValid = false;
 
-    if (!isValid){
-        event.preventDefault();
+    if(isValid){
+        alert("Formulario enviado");
     }
 });
 

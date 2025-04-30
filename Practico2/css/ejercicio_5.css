@@ -1,0 +1,10 @@
+body{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.oculto{
+    color: red;
+    display: none;
+}
