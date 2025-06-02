@@ -1,0 +1,23 @@
+doctype html
+html(lang="es")
+    head
+        title= title
+        meta(charset="utf-8")
+        link(rel="stylesheet", href="/css/style.css")
+    body
+        h1= message
+        h2 Estoy en PUG
+        p Bienvenido a nuestra aplicación
+
+        if showFeatures
+            h2 Características principales:
+            ul
+                each feature in features
+                    li= feature
+        else
+            p No hay características disponibles.
+            
+        //- Esto es un comentario (no se renderiza en el HTML)
+        
+        footer
+            p © #{new Date().getFullYear()} Mi Aplicación
