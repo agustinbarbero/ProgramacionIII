@@ -1,16 +1,14 @@
+const turnosMock = require('../../models/mock/turnos.models')
+const pacientesMock = require('../../models/mock/pacientes.models')
 
 // controladores
 const home = async (req, res) => {
+    const turnos = await turnosMock.list();
+    const pacientes = await pacientesMock.list();
     res.render('index', {
-        title: 'Mi aplicación Express',
-        message: '¡Hola desde el servidor!',
-        showFeatures: true,
-        features: [
-            'Descripción de la característica 1',
-            'Descripción de la característica 2',
-            'Descripción de la característica 3'
-
-        ]
+        title: 'Dashboard Hospital',
+        message: 'Turnos',
+        turnos
     });
 }
 module.exports = {

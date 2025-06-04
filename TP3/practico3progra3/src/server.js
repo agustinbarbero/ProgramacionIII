@@ -39,6 +39,8 @@ class Server {
     // this.app.use('/', express.static('public'))
     this.app.use(express.json())
     this.app.use(morgan('dev'))
+    this.app.use(express.static('src/styles'))
+    this.app.use(express.static('src/public'))
   }
 
   rutas() {

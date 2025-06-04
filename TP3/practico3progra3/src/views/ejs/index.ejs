@@ -1,30 +1,57 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/styles.css">
 </head>
+
 <body>
-    <h1><%= message %></h1>
-    <h2>Estoy en EJS</h2>
-    <p>Bienvenido a nuestra aplicación</p>
+    <header>
+        <div class="header-btn">
+        <button>Pacientes</button>
+        <button>Turnos</button>  
+        </div>
+        <h1>Hospital Italiano</h1>      
+    </header>
+    <div class="tabla">
+        <table>
+            <h2>
+                <%= message %>
+            </h2>
+            <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Paciente</th>
+                <th>Estado</th>
+            </tr>
+                <% turnos.forEach(function(turno) { %>
+                    <tr>
+                        <td>
+                            <%= turno.fecha %>
+                        </td>
+                        <td>
+                            <%= turno.hora %>
+                        </td>
+                        <td>
+                            <%= turno.paciente ? turno.paciente : 'Disponible' %>
+                        </td>
+                        <td>
+                            <%= turno.paciente ? 'Reservado' : 'Disponible' %>
+                        </td>
+                    </tr>
+                    <% }); %>
+        </table>
+    </div>
 
-    <% if (showFeatures) { %>
-        <h2>Características principales:</h2>
-        <ul>
-            <% features.forEach(function(feature) { %>
-                <li><%= feature %></li>
-            <% }); %>
-        </ul>
-    <% } else { %>
-        <p>No hay características disponibles.</p>
-    <% } %>
 
-    <%# Esto es un comentario (no se renderiza en el HTML) %>
-    
+
     <footer>
-        <p>© <%= new Date().getFullYear() %> Mi Aplicación</p>
+        <p>© <%= new Date().getFullYear() %> Grupo 20</p>
     </footer>
 </body>
+
 </html>
