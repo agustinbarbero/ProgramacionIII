@@ -1,7 +1,6 @@
-const Identificador = require('./identificador.entity');
-
+const Identificador = require('./identificador.entity')
 class Turnos extends Identificador {
-    constructor(id, fecha, hora, paciente) {
+    constructor( fecha, hora, paciente,id=0) {
         super(id);
         this.fecha = fecha;
         this.hora = hora;
@@ -10,7 +9,7 @@ class Turnos extends Identificador {
     }
 
     toString() {
-        return `Turno ID: ${this.id}, Fecha: ${this.fecha}, Hora: ${this.hora}, Paciente: ${this.paciente}, Médico: ${this.medico}`;
+        return `Turno ID: ${this.id}, Fecha: ${this.fecha}, Hora: ${this.hora}, Paciente: ${this.paciente}`;
     }
 }
 

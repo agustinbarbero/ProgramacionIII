@@ -1,30 +1,29 @@
 const turno = require("./../mock/entities/turnos.entity.js");
+const paciente = require('../../models/mock/pacientes.models.js');
 const Config = require("./../../config/config.js");
 const jwt = require("jsonwebtoken");
 class TurnosModel {
     constructor() {
+
         this.data = [];
         this.data.push(
             new turno(
-                "123",
-                "2023-10-01",
+                '2023-10-01',
                 "10:00",
-                "Felipe Fernandez",
+                1
             )
         );
         this.id = 2;
     }
     list() {
-        return new Promise((resolve, reject) => {
-            resolve(this.data);
-        });
+        return Promise.resolve(this.data);
     }
 
     findById(id) {
         return new Promise((resolve, reject) => {
             try {
                 const turno = this.data.find((t) => t.id === parseInt(id));
-                if (turno === null) {
+                if (!turno) {
                     throw new Error("El turno no existe");
                 }
                 resolve(turno);
@@ -45,7 +44,7 @@ class TurnosModel {
                 // payload, secreto, tiempo de expiracion
                 const payload = {
                     turnoId: turnoFound.id,
-                    paciente: turnoFound.paciente,
+                    pacienteId: turnoFound.pacienteId,
                 };
                 console.log("palabra secreta, turnos model:", Config.secreteWord);
 
@@ -58,18 +57,16 @@ class TurnosModel {
             }
         });
     }
-    create(turno) {
+    create(pacienteId, fecha, hora) {
+        const turnoData = new turno(fecha, hora, pacienteId);
         return new Promise((resolve, reject) => {
-            try {
-                if (!turno || !turno.fecha || !turno.hora || !turno.paciente || !turno.medico) {
-                    throw new Error("Datos del turno incompletos");
+                //TODO: verificar que exista el paciente con pacienteID
+                if (paciente.getPacienteById(pacienteId) === null) {
+                    reject(new Error("Paciente no encontrado"));
                 }
-                turno.id = this.id++;
-                this.data.push(turno);
-                resolve(turno);
-            } catch (error) {
-                reject(error);
-            }
+                turnoData.id = this.id++;
+                this.data.push(turnoData);
+                resolve(turnoData);
         });
     }
     delete(id) {

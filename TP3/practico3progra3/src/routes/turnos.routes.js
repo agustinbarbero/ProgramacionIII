@@ -6,8 +6,9 @@ const schema = require("../schemas/turnos_schemas.js");
 const { validate } = require('../middlewares/validate.js');
 
 rutaTurnos.get('/', verifyTokenMiddleware, turnosController.list);
-rutaTurnos.get('/api/v1/turnos/:idPaciente', verifyTokenMiddleware, turnosController.getturnosbyId);
-rutaTurnos.post('/api/v1/turnos/create', validate(schema.turnoSchema), verifyTokenMiddleware, turnosController.create);
-rutaTurnos.delete('/api/v1/turnos/delete', validate(schema.deleteSchema), verifyTokenMiddleware, turnosController.delete);
+rutaTurnos.get('/:idPaciente', verifyTokenMiddleware, turnosController.getturnosbyId);
+//rutaTurnos.post('/create' ,verifyTokenMiddleware, turnosController.create);
+rutaTurnos.post('/create',validate(schema.createSchema),verifyTokenMiddleware , turnosController.create);
+rutaTurnos.delete('/delete/:id', validate(schema.deleteSchema), verifyTokenMiddleware, turnosController.delete);
 
 module.exports = rutaTurnos;

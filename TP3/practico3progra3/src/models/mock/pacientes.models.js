@@ -124,17 +124,24 @@ class PacientesModel {
     });
   }
   getPacienteById(id) {
+   
     return new Promise((resolve, reject) => {
-      try {
-        const identificador = Number(id);
-        const pacienteEncontrado = this.data.find(paciente => paciente.id === identificador)
-        if (!pacienteEncontrado) {
-          throw new Error("el id es incorrecto");
+    
+        const pacienteEncontrado = this.data.find(paciente => paciente.id == id)
+   
+        
+        if(pacienteEncontrado===undefined){
+          reject(new Error("el id es incorrecto"))
+        }else{
+          console.log("paciente encontrado:", pacienteEncontrado);
+          resolve(pacienteEncontrado);
         }
-        resolve(pacienteEncontrado);
-      } catch (error) {
-        reject(error)
-      }
+
+
+
+     
+        
+   
 
     })
   }
