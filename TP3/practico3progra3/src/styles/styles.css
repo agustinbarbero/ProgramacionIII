@@ -37,6 +37,11 @@ header{
     transition: all 0.3 ease;
 }
 
+.header-btn a{
+    text-decoration: none;
+    color: inherit;
+}
+
 .header-btn button:hover{
     width: 120px;
     height: 60px;

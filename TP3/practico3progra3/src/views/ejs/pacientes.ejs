@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-btn">
+            <button><a href="/pacientes">Pacientes</a></button>
+            <button><a href="/turnos">Turnos</a></button>  
+        </div>
+        <h1>Hospital Italiano</h1>      
+    </header>
+    <div class="tabla">
+        <h2><%= message %></h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% pacientes.forEach(function(paciente) { %>
+                    <tr>
+                        <td><%= paciente.dni %></td>
+                        <td><%= paciente.nombre %></td>
+                        <td><%= paciente.apellido %></td>
+                        <td><%= paciente.email %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </div>
+    <footer>
+        <p>© <%= new Date().getFullYear() %> Grupo 20</p>
+    </footer>
+</body>
+
+</html>
