@@ -1,0 +1,19 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "PostgreSQL Local",
+      "Group": "Docker Servers",
+      "Host": "database",
+      "Port": 5432,
+      "MaintenanceDB": "app_database",
+      "Username": "app_user",
+      "PassFile": "/var/lib/pgadmin/pgpass",
+      "SSLMode": "prefer",
+      "SSLCompression": 0,
+      "Timeout": 10,
+      "UseSSHTunnel": 0,
+      "TunnelPort": "22",
+      "TunnelAuthentication": 0
+    }
+  }
+}

@@ -1,0 +1,27 @@
+# frontend/Dockerfile.dev
+FROM node:18-alpine
+
+# Instalar herramientas para hot reload
+RUN apk add --no-cache git
+
+WORKDIR /app
+
+# Variables de entorno para hot reload
+ENV CHOKIDAR_USEPOLLING=true
+ENV WATCHPACK_POLLING=true
+ENV FAST_REFRESH=true
+
+# Copiar package.json primero para aprovechar cache de Docker
+COPY package*.json ./
+
+# Instalar dependencias
+RUN npm install
+
+# Copiar código fuente
+COPY . .
+
+# Exponer puerto
+EXPOSE 3000
+
+# Comando con hot reload habilitado
+CMD ["npm", "start"]
