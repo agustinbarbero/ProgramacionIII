@@ -1,19 +1,11 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>¡Bienvenido a tu nueva aplicación!</h1>
-        <p>Frontend React funcionando correctamente</p>
-        <p>
-          <a href="/api/health" target="_blank" rel="noopener noreferrer">
-            Verificar estado de la API
-          </a>
-        </p>
-      </header>
-    </div>
+    <HomePage />
   );
 }
 
