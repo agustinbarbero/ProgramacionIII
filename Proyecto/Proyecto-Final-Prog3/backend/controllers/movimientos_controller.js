@@ -1,5 +1,4 @@
-const  { Movimiento } = require('../models/movimiento');
-const { Producto } = require('../models/producto');
+const { Movimiento, Producto } = require('../models');
 
 exports.createMovimiento = async (req, res) => {
     try {

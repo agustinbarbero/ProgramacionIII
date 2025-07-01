@@ -39,24 +39,21 @@ exports.createProducto = async (req, res) => {
         res.status(500).json({ message: "Error al crear el producto", error });
     }
 
-    exports.updateProducto = async (req, res) => {
-    const { id } = req.params;  
-    const { nombre, stock, categoria, precio } = req.body;
-    try {
-        const productoActualizado = await Producto.findByIdAndUpdate(
-            id,
-            { nombre, stock, categoria, precio },
-            { new: true }
-        );
-        if (!productoActualizado) {
-            return res.status(404).json({ message: "Producto no encontrado" });
-        }
-        res.status(200).json(productoActualizado);
+};
+
+exports.updateProducto = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const [updated] = await Producto.update(req.body, { where: { id } });
+    if (updated) {
+      const productoActualizado = await Producto.findByPk(id);
+      res.json(productoActualizado);
+    } else {
+      res.status(404).json({ message: 'Producto no encontrado' });
     }
-    catch (error) {
-        res.status(500).json({ message: "Error al actualizar el producto", error });
-    }
-}
+  } catch (error) {
+    res.status(500).json({ message: 'Error al actualizar el producto', error });
+  }
 };
 
 exports.deleteProducto = async (req, res) => {

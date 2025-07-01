@@ -19,18 +19,19 @@ const sequelize = new Sequelize(
   }
 );
 
-const Categoria = require('./categoria');
-const Producto = require('./productos');
-const Movimiento = require('./movimiento');
+const Categoria = require('./categoria')(sequelize, Sequelize.DataTypes);
+const Producto = require('./productos')(sequelize, Sequelize.DataTypes);
+const Movimiento = require('./movimiento')(sequelize, Sequelize.DataTypes);
 
-// Establecer relaciones
-Producto.belongsTo(Categoria, { foreignKey: 'categoriaId' });
-Categoria.hasMany(Producto, { foreignKey: 'categoriaId' });
-
-Movimiento.belongsTo(Producto, { foreignKey: 'productoId' });
-Producto.hasMany(Movimiento, { foreignKey: 'productoId' });
+// Asociaciones
+if (Categoria.associate) Categoria.associate({ Producto, Movimiento, Categoria });
+if (Producto.associate) Producto.associate({ Categoria, Movimiento, Producto });
+if (Movimiento.associate) Movimiento.associate({ Categoria, Producto, Movimiento });
 
 module.exports = {
   sequelize,
-  Sequelize
+  Sequelize,
+  Categoria,
+  Producto,
+  Movimiento
 };

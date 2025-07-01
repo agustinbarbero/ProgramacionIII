@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   Movimiento.associate = (models) => {
-    Movimiento.belongsTo(models.Productos, {
+    Movimiento.belongsTo(models.Producto, {
       foreignKey: 'productoId',
       as: 'producto'
     });
