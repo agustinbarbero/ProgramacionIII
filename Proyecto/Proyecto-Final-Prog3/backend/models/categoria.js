@@ -1,32 +1,25 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class Categoria extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
-    }
-  }
-  Categoria.init({
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
-    },
-    nombre: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true
-    }
-  }, {
-    sequelize,
-    modelName: 'Categoria',
-  });
-  return Categoria;
+const { Categoria } = require('../models');
+
+exports.getCategorias = async () => {
+    return Categoria.findAll();
+};
+
+exports.createCategoria = async (data) => {
+    return Categoria.create({ nombre: data.nombre });
+};
+
+exports.updateCategoria = async (id, data) => {
+    const [updated] = await Categoria.update(
+        { nombre: data.nombre },
+        { where: { id } }
+    );
+    return updated;
+};
+
+exports.deleteCategoria = async (id) => {
+    return Categoria.destroy({ where: { id } });
+};
+
+exports.getCategoriaById = async (id) => {
+    return Categoria.findByPk(id);
 };
