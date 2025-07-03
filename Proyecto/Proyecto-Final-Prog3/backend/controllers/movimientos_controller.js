@@ -75,17 +75,19 @@ exports.updateMovimiento = async (req, res) => {
         });
 
         // Actualizar el stock del producto
-        if (movimiento.tipo === 'entrada') {
+        // Revertir el stock del movimiento anterior
+        if (movimiento.tipo === 'ingreso') {
             producto.stock -= movimiento.cantidad;
-        } else if (movimiento.tipo === 'salida') {
+        } else if (movimiento.tipo === 'venta') {
             producto.stock += movimiento.cantidad;
         }
 
-        if (tipo === 'entrada') {
+        // Aplicar el nuevo movimiento
+        if (tipo === 'ingreso') {
             producto.stock += cantidad;
-        } else if (tipo === 'salida') {
+        } else if (tipo === 'venta') {
             if (producto.stock < cantidad) {
-                return res.status(400).json({ message: 'Stock insuficiente para la salida' });
+            return res.status(400).json({ message: 'Stock insuficiente para la venta' });
             }
             producto.stock -= cantidad;
         }
@@ -113,9 +115,9 @@ exports.deleteMovimiento = async (req, res) => {
 
         // Actualizar el stock del producto
         const producto = await productosModel.findById(movimiento.productoId);
-        if (movimiento.tipo === 'entrada') {
+        if (movimiento.tipo === 'ingreso') {
             producto.stock -= movimiento.cantidad;
-        } else if (movimiento.tipo === 'salida') {
+        } else if (movimiento.tipo === 'venta') {
             producto.stock += movimiento.cantidad;
         }
 

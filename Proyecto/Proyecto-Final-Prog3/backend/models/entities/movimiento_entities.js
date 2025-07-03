@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     tipo: {
       type: DataTypes.ENUM('venta', 'ingreso'),
+      defaultValue: 'ingreso',
       allowNull: false
     },
     cantidad: {

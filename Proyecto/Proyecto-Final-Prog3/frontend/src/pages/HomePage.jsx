@@ -3,17 +3,14 @@ import { useNavigate } from 'react-router-dom'
 
 function HomePage(){
     const navigate = useNavigate();
-    const irAgregarProducto = () => {
-        navigate('/AgregarProducto');
-    };
-
     return(
         <div>
         <h1>Bienvenido a tu Tienda Virtual</h1>
-        <button onClick={irAgregarProducto}>Agregar Producto</button>
+        <button onClick={() => navigate('/AgregarProducto')}>Agregar Producto</button>
+        <button onClick={() => navigate('/movimientos')}>Ver Movimientos</button>
+        <button onClick={() => navigate('/agregar-movimiento')}>Registrar Movimiento</button>
+        <button onClick={() => navigate('/crear-categoria')}>Crear Categoría</button>
         </div>
     )
-
-};
-
+}
 export default HomePage;

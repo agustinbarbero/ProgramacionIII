@@ -5,3 +5,4 @@ export function useCategorias() {
   return useQuery('categorias', categoriaService.getCategorias);
 }
 
+

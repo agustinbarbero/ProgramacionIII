@@ -1,14 +1,17 @@
 import useCustomForm from "../hooks/useForm";
 import { useCrearProducto } from "../hooks/useProductos";
-
+import { useCategorias } from "../hooks/useCategorias";
 function AgregarProducto() {
   const { register, handleSubmit, reset } = useCustomForm({
     nombre: "",
     stock: "",
-    precio: ""
+    precio: "",
+    categoriaId: ""
   });
 
   const crearProducto = useCrearProducto();
+
+  const { data: categorias, isLoading: cargandoCategorias } = useCategorias();
 
   const onSubmit = (data) => {
     crearProducto.mutate(
@@ -39,6 +42,16 @@ function AgregarProducto() {
           placeholder="Ingrese el nombre del producto"
           required
         />
+        <select {...register("categoriaId")} required>
+          <option value="">Seleccione una categoría</option>
+          {cargandoCategorias
+            ? <option>Cargando...</option>
+            : categorias?.data.map((cat) => (
+                <option key={cat.id} value={cat.id}>
+                  {cat.nombre}
+                </option>
+              ))}
+        </select>
         <input
           type="number"
           {...register("stock")}
