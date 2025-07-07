@@ -9,6 +9,14 @@ module.exports = {
     host: process.env.DB_HOST || 'localhost',
     port: process.env.DB_PORT || 5432,
     dialect: 'postgres',
+    define: {
+      freezeTableName: true,
+      underscored: false,
+      quoteIdentifiers: true,
+      timestamps: true,
+      createdAt: 'createdAt',
+      updatedAt: 'updatedAt'
+    },
     logging: console.log,
     pool: {
       max: 5,

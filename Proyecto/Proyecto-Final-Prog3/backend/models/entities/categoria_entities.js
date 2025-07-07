@@ -1,7 +1,12 @@
 'use strict';
 const {Model} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class Categoria extends Model {}
+  class Categoria extends Model {
+    static associate(models) {
+      // Una categoría tiene muchos productos
+      Categoria.hasMany(models.Producto, { foreignKey: 'categoriaId' });
+    }
+  }
 
   Categoria.init({
     id: {
@@ -17,7 +22,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {
     sequelize,
     modelName: 'Categoria',
-    tableName: 'Categorias'
+    tableName: 'Categorias',
+    timestamps: true,  
+    underscored: false,
+    freezeTableName: true
   });
   return Categoria;
 };

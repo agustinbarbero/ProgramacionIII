@@ -30,11 +30,18 @@ module.exports = (sequelize, DataTypes) => {
     fechaHora: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW
+    },
+    productoId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   }, {
     sequelize,
     modelName: 'Movimiento',
     tableName: 'Movimientos',
+    timestamps: true,
+    underscored: false,
+    freezeTableName: true
   });
 
   return Movimiento;

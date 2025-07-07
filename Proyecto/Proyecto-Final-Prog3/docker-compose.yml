@@ -1,5 +1,4 @@
 # docker-compose.yml con hot reload optimizado
-version: '3.8'
 
 services:
   # Base de datos PostgreSQL
