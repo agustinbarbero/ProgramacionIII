@@ -1,6 +1,7 @@
 //const { Movimiento, Producto } = require('../models');
 const movimientosModel = require('../models/movimiento');
 const productosModel = require('../models/productos');
+const { sequelize } = require('../models'); // Asegúrate de importar sequelize
 
 exports.getMovimientos = async (req, res) => {
     try {
@@ -13,38 +14,42 @@ exports.getMovimientos = async (req, res) => {
 
 
 exports.createMovimiento = async (req, res) => {
-    try{
+    const t = await sequelize.transaction();
+    try {
         const { productoId, cantidad, tipo, fechaHora } = req.body;
 
         // Verificar si el producto existe
         const producto = await productosModel.findById(productoId);
         if (!producto) {
+            await t.rollback();
             return res.status(404).json({ message: 'Producto no encontrado' });
         }
 
-        // Crear el movimiento
+        // Validar stock antes de crear el movimiento
+        if (tipo === 'venta') {
+            if (producto.stock < cantidad) {
+                await t.rollback();
+                return res.status(400).json({ message: 'Stock insuficiente para la venta' });
+            }
+            producto.stock -= cantidad;
+        } else if (tipo === 'ingreso') {
+            producto.stock += cantidad;
+        }
+
+        await producto.save({ transaction: t });
+
+        // Crear el movimiento solo si todo es válido
         const nuevoMovimiento = await movimientosModel.createMovimiento({
             productoId,
             cantidad,
             tipo,
             fechaHora
-        });
+        }, t); // Pasa la transacción
 
-        // Actualizar el stock del producto
-        if (tipo === 'ingreso') {
-            producto.stock += cantidad;
-        } else if (tipo === 'venta') {
-            if (producto.stock < cantidad) {
-                return res.status(400).json({ message: 'Stock insuficiente para la salida' });
-            }
-            producto.stock -= cantidad;
-        }
-
-        await producto.save();
-
+        await t.commit();
         res.status(201).json(nuevoMovimiento);
-    }
-    catch (error) {
+    } catch (error) {
+        await t.rollback();
         res.status(500).json({ message: 'Error al crear el movimiento', error });
     }
 }

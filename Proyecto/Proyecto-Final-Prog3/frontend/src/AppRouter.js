@@ -1,19 +1,17 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import HomePage from './pages/HomePage';
-import AgregarProducto from './pages/AgregarProducto';
-import Movimientos from './pages/Movimientos';
-import AgregarMovimiento from './pages/AgregarMovimiento';
-import CrearCategorias from './pages/crearCategorias';
+import ProductosPage from './pages/ProductosPage';
+import CategoriasPage from './pages/CategoriasPage';
+import MovimientosPage from './pages/MovimientosPage';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/AgregarProducto" element={<AgregarProducto />} />
-        <Route path="/movimientos" element={<Movimientos />} />
-        <Route path="/agregar-movimiento" element={<AgregarMovimiento />} />
-        <Route path="/crear-categoria" element={<CrearCategorias />} />
+        <Route path="/productos" element={<ProductosPage />} />
+        <Route path="/categorias" element={<CategoriasPage />} />
+        <Route path="/movimientos" element={<MovimientosPage />} />
       </Routes>
     </BrowserRouter>
   );

@@ -36,7 +36,7 @@
   <!-- Font Awesome for icons (opcional) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <title>Mi Tienda Virtual</title>
+  <title>Sistema de Inventario Básico</title>
   
   <!-- Inline CSS para loading spinner y optimizaciones iniciales -->
   <style>
@@ -120,22 +120,6 @@
       font-weight: 500;
     }
 
-    /* Estilos para desarrollo */
-    .development-banner {
-      background: linear-gradient(90deg, #ff6b6b, #ee5a24);
-      color: white;
-      text-align: center;
-      padding: 8px;
-      font-size: 12px;
-      font-weight: 600;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 10000;
-      display: none;
-    }
-
     /* Show development banner only in development */
     body[data-env="development"] .development-banner {
       display: block;
@@ -148,10 +132,6 @@
 </head>
 
 <body data-env="%NODE_ENV%">
-  <!-- Banner de desarrollo -->
-  <div class="development-banner">
-    🚧 MODO DESARROLLO - Esta aplicación está en desarrollo local
-  </div>
 
   <!-- Mensaje para usuarios sin JavaScript -->
   <noscript>
@@ -187,7 +167,7 @@
         setTimeout(() => {
           loadingElement.style.display = 'none';
         }, 500);
-      }
+      } 
     }
 
     // Detectar cuando React ha montado

@@ -1,13 +1,15 @@
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useCrearMovimiento } from "../hooks/useMovimiento";
 import { useProductos } from "../hooks/useProductos";
 
 function AgregarMovimiento() {
+    const navigate = useNavigate();
     const { data: productos } = useProductos();
     const crearMovimiento = useCrearMovimiento();
     const [form, setForm] = useState({
         productoId: "",
-        tipo: "ingreso",
+        tipo: "Ingreso",
         cantidad: 1,
     });
 
@@ -41,8 +43,8 @@ function AgregarMovimiento() {
                 ))}
             </select>
             <select name="tipo" value={form.tipo} onChange={handleChange}>
-                <option value="ingreso">Ingreso</option>
-                <option value="venta">Venta</option>
+                <option value="Ingreso">Ingreso</option>
+                <option value="Venta">Venta</option>
             </select>
             <input
                 type="number"

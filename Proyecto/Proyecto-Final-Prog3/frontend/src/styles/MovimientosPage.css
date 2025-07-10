@@ -1,0 +1,65 @@
+.movimientos-container {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(90,24,154,0.08);
+  padding: 32px;
+}
+
+.movimientos-title {
+  color: #5a189a;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.movimientos-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.movimientos-form select,
+.movimientos-form input {
+  padding: 8px 12px;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.movimientos-form button {
+  background: #7b2ff2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.movimientos-form button:hover {
+  background: #5a189a;
+}
+
+.movimientos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.movimientos-table th,
+.movimientos-table td {
+  border: 1px solid #eee;
+  padding: 10px;
+  text-align: center;
+}
+
+.movimientos-table th {
+  background: #f3e8ff;
+  color: #5a189a;
+  font-weight: 700;
+}

@@ -1,4 +1,5 @@
 const categoriasModel = require('../models/categoria');
+const productosModel = require('../models/productos'); // Asegúrate de importar esto
 
 exports.getCategorias = async (req, res) => {
     try {
@@ -34,6 +35,13 @@ exports.updateCategoria = async (req, res) => {
 exports.deleteCategoria = async (req, res) => {
     try {
         const { id } = req.params;
+
+        // Verifica si hay productos asociados a la categoría
+        const productos = await productosModel.findBycategoria(id);
+        if (productos && productos.length > 0) {
+            return res.status(400).json({ message: 'No se puede eliminar la categoría porque tiene productos asociados.' });
+        }
+
         const categoriaBorrada = await categoriasModel.deleteCategoria(id);
         if (!categoriaBorrada) {
             return res.status(404).json({ message: 'Categoría no encontrada' });

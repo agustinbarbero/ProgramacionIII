@@ -1,0 +1,79 @@
+.productos-container {
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(90,24,154,0.08);
+  padding: 32px;
+}
+
+.productos-title {
+  color: #5a189a;
+  margin-bottom: 24px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.productos-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.productos-form input,
+.productos-form select {
+  padding: 8px 12px;
+  border: 1px solid #bdbdbd;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.productos-form button {
+  background: #7b2ff2;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.productos-form button:hover {
+  background: #5a189a;
+}
+
+.productos-list {
+  list-style: none;
+  padding: 0;
+}
+
+.productos-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 1.1rem;
+}
+
+.productos-list button {
+  margin-left: 8px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.productos-list button:nth-child(2) {
+  background: #ffd60a;
+  color: #222;
+}
+
+.productos-list button:last-child {
+  background: #e63946;
+  color: #fff;
+}

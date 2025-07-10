@@ -4,13 +4,13 @@ exports.getMovimientos = async () => {
     return Movimiento.findAll();
 };
 
-exports.createMovimiento = async (data) => {
+exports.createMovimiento = async (data, transaction = null) => {
     return Movimiento.create({
         productoId: data.productoId,
         cantidad: data.cantidad,
         tipo: data.tipo,
         fechaHora: data.fechaHora
-    });
+    }, transaction ? { transaction } : {});
 };
 
 exports.updateMovimiento = async (id, data) => {
